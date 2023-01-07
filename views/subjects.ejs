@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head'); %>
+    <title><%= title %></title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="info-title">
+            <span class="title"><%= span %></span>
+        </div>
+        <%- include ('./partials/header'); %>
+    </header>
+
+    <%- include ('./partials/navigation'); %>
+
+    <script src="/js/menumobile.js"></script>
+    <script src="/js/gsap.min.js"></script>
+</body>
+</html>

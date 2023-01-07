@@ -1,0 +1,42 @@
+<section class="content">
+    <div class="form-gridview">
+        <table class="default">
+        <%- include ('./table_admin'); %>
+        </table>
+        <div class="pages">
+            <ul>
+                <li class="active">
+                    <div>
+                        <button type="submit" name="page" value="1">1</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-aside">
+        <div class="form-options">
+            <div class="options">
+                <div>
+                    <a style="text-decoration: none;" class="btn btn-add icon activateOption" id="show-div-button">add</a>
+                </div>
+                <div>
+                    <a href="#" style="text-decoration: none;" class="btn btn-disabled icon" type="submit" disabled="">code</a>
+                </div>
+                <div>
+                    <a href="#" style="text-decoration: none;" class="btn btn-disabled icon" type="submit" disabled="">print</a>
+                </div>
+                <a href="#" style="text-decoration: none;" class="btn btn-search-mobile icon">search</a>
+                <div>
+                    <a href="/" style="text-decoration: none;" class="btn btn-exit icon">exit_to_app</a>
+                </div>
+            </div>
+            <div class="search">
+                <div class="barra">
+                    <input type="text" class="text-search" placeholder="Buscar..." autofocus="">
+                    <button id="btnSearch" class="btn-search icon" type="submit">search</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+

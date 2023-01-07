@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head'); %>
+    <link rel="stylesheet" href="/css/login.css" >
+    <title><%= title %></title>
+</head>
+<body class="login">
+	<div class="loader"></div>
+	<div class="wrap-title-login">
+		<div class="title-login">
+			<h1>Sistema Escolar</h1>
+		</div>
+	</div>
+	<div class="form-login">
+		<div class="logo-form-login">
+		</div>
+		<form>
+			<label class="label">Inicia sesión</label>
+			<input type="text" class="text" placeholder="Correo electrónico o matrícula" autofocus required />
+			<input type="password" class="textcontrasena" placeholder="Contraseña" autocomplete="off" required />
+            <div class="forgot-pass">
+                <a class="un" href="#">¿Olvidaste la contraseña?</a>
+            </div>
+            <div class="pretty p-svg p-curve p-smooth">
+                <input type="checkbox" placeholder="Recordar"  />
+                <div class="state p-primary">
+                    <label class="remember">Recuérdame</label>
+                </div>
+            </div>
+			<button class="button" type="submit">Entrar</button>
+		</form>
+	</div>
+</body>
