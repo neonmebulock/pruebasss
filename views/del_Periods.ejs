@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head'); %>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/table.css">
+        <link rel="stylesheet" href="/css/form_add.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="info-title">
+            <span class="title">
+                <%= span %>
+            </span>
+        </div>
+        <%- include ('./partials/header'); %>
+    </header>
+
+    <%- include ('./partials/navigation'); %>
+    <section class="content" style="display: flex; justify-content: center;align-items: center;">
+        <div class="form-data">
+            <div class="head">
+                <h1>Atención</h1>
+            </div>
+            <div class="delete">
+                <h1>¿Estas seguro?</h1>
+                <h2>¡Se borrará de forma permanente!</h2>
+                <button id="btnYesDelete" class="btn-si" type="submit" autofocus="">¡Si, bórralo!</button>
+                    <button onclick="location.href='/periods'" class="btn-no"  type="submit">Cancelar</button>
+            </div>
+        </div>
+    </section>
+    <%- include ('./partials/flotinChat'); %>
+    <script src="/js/menumobile.js"></script>
+    <script src="/js/gsap.min.js"></script>
+</body>
+</html>

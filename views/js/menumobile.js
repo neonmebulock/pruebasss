@@ -73,8 +73,8 @@ let tlU = gsap.timeline({
 });
 
 tlU.to('.user-mobile .activator-user', {
-    background: '#6272a4',
-    border: '3px solid #6272a4',
+    background: 'var(--backgroundNavHome)',
+    border: '3px solid var(--backgroundBtnList)',
     borderTopLeftRadius: '0',
     borderBottomLeftRadius: '0'
 });
@@ -119,3 +119,32 @@ cardU.addEventListener('click', () => {
         tlU.reverse();
     }
 });
+
+
+/*-------------------------------------------
+ botón de modo Dark
+-------------------------------------------*/
+
+var btn = document.getElementsByClassName("dark-mode-btn");
+  // Escucha el evento "click" del botón
+for (var i = 0; i < btn.length; i++) {
+
+    btn[i].addEventListener("click", function() {
+    // Alterna la clase "dark-mode" del elemento body
+    document.body.classList.toggle("dark-mode");
+
+    // Almacena el estado del modo oscuro en el almacenamiento local
+
+    if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", "enabled");
+    } else {
+    localStorage.removeItem("dark-mode");
+    }
+});
+}
+  // Aplica el estado del modo oscuro al cargar la página
+if (localStorage.getItem("dark-mode") === "enabled") {
+    document.body.classList.add("dark-mode");
+}
+
+

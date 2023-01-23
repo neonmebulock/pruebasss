@@ -3,7 +3,53 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --backgroundDefault: #282a36;
+    --backgroundNavHome: #383a59;
+    --activadorMenu: #6272a4;
+    --bacgroundContent: #44475a;
+    --backgroundBtnDisabled:#6a7186;
+    --backgroundMenuActive: #9492c0;
+    --backgroundHoverMenu: #9492c0;
+    --backgroundFocusInput: #929cb9;
+    --backgroundBtnShearch: #6272a4;
+    --backgroundBtnFocusShearch: #929cb9;
+    --backgroundBtnList:#6272a4;
+    --borderColorHr:#282a3680;
+    --colorhr:#4a567c;
+    --colorIcon:#fff;
+    --backgroundChat:-webkit-linear-gradient(-45deg, #183850a6 0, #1838500d 25%, #192c462e 50%, #22254c6e 75%, #22254ce0 100%);
+    --scrollPrincipal:rgb(98, 114, 164);
+    --scrollSecundario:#6272a4;
+    --selectB:#6a7186;
+    --colorTitle:#fff;
+}
+
+.dark-mode {
+    --activadorMenu:#3d7c98;
+    --backgroundDefault: #a8dff1;
+    --backgroundNavHome: #3d7c98;
+    --bacgroundContent: #3d7c98;
+    --backgroundBtnDisabled:#aeb2bda6;
+    --backgroundHoverMenu:#a8dff1;
+    --backgroundMenuActive: #a8dff1;
+    --borderColorHr:#a8dff1;
+    --backgroundBtnList:#a8dff1;
+    --backgroundBtnShearch:#a8dff1;
+    --backgroundBtnFocusShearch:#a8dff1;
+    --colorhr:#3d7c98;
+    --backgroundFocusInput:#a8dff1;
+    --colorIcon: #3d7c98;
+    --backgroundChat: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46d4 50%, #22254c 75%, #22254cfa 100%);
+    --scrollPrincipal:#3d7c98;
+    --scrollSecundario:#a8dff1;
+    --selectB:#326b7c;
+    --colorTitle:#3d7c98;
+}
+
 /*-------------------------------------------
+--colorHoverMenu:#a8dff1;
   Page Loader
 -------------------------------------------*/
 
@@ -26,16 +72,52 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url(../img/loader_user.gif) 50% 50% no-repeat #44475a;
+    background: url(../img/loader_user.gif) 50% 50% no-repeat var(--bacgroundContent);
     border-radius: .4em;
     opacity: 1;
+}
+.flotinChat a {
+    font-size: 20px;
+    text-decoration: none;
+    color:#fff;
+}
+.flotinChat:hover{
+    background: var(--backgroundBtnShearch);
+}
+.flotinChat:hover span{
+    color: #000;
+}
+.flotinChat {
+    cursor: pointer;
+    display: none;
+    opacity:0;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    bottom: 70px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    border:2px solid var(--backgroundBtnShearch);
+    transform: translateY(70px);
+    transition: all 250ms ease-out;
+    border-radius: 50%;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+    background: var(--backgroundNavHome);
+}
+@media (max-width: 990px){
+    .flotinChat {
+        display: flex;
+        opacity:1;
+    }
 }
 /*-------------------------------------------
 Cosas Basicas
 -------------------------------------------*/
 body {
     font-family: Helvetica Neue”, Helvetica, Arial, sans-serif;
-    background: #282a36;
+    background: var(--backgroundDefault);
     color: #4a567c;
 }
 
@@ -65,12 +147,12 @@ body {
     height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: rgb(98, 114, 164);
+    background: var(--scrollSecundario);
     border-bottom-left-radius: 0.6em;
     border-bottom-right-radius: 0.6em;
 }
 ::-webkit-scrollbar-thumb {
-    background: #eef4ff73;
+    background: var(--scrollPrincipal);
     border-radius: 2em;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -110,7 +192,7 @@ button:focus {
     float: right;
     height: 50px;
     margin: 35px 3%;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-radius: 0.4em;
     user-select: none;
@@ -171,7 +253,7 @@ button:focus {
 
 .info-school-period .school-period a:hover,
 .info-school-period .school-period a:focus {
-    color: #9492c0;
+    color: var(----backgroundHoverMenu);
     outline: none;
     transition: all 200ms ease-in;
 }
@@ -189,11 +271,11 @@ Home | Navigation
 
 .nav-home {
     position: fixed;
-    width: 22%;
+    width: 18%;
     top: 0;
     bottom: 0;
     left: 0;
-    background: #383a59;
+    background: var(--backgroundNavHome);
     box-shadow: 2px 0 2px rgba(73, 80, 104, 0.4);
     overflow-x: hidden;
     overflow-y: auto;
@@ -210,8 +292,8 @@ Home | Navigation
 }
 
 .nav-home .user {
-    border-top: 1px solid #282a3680;
-    border-bottom: 1px solid #282a3680;
+    border-top: 1px solid var(--borderColorHr);
+    border-bottom: 1px solid var(--borderColorHr);
 }
 
 .nav-home .user::after {
@@ -225,9 +307,9 @@ Home | Navigation
     width: 50px;
     height: 50px;
     margin: 6% 8%;
-    background-color: #6272a4;
+    background-color: var(--backgroundBtnList);
     box-shadow: 0 0 6px rgba(142, 136, 192, 0.2);
-    border: 3px solid #6272a4;
+    border: 3px solid var(--backgroundBtnList);
     border-radius: 10em;
     pointer-events: none;
 }
@@ -260,7 +342,7 @@ Home | Navigation
 
 .nav-home .user span.logout_user>a:hover,
 .nav-home .user span.logout_user>a:focus {
-    color: #9492c0;
+    color: var(--backgroundHoverMenu);
     transition: all 200ms ease-in;
 }
 
@@ -270,9 +352,9 @@ Home | Navigation
     right: 3%;
     width: 170px;
     margin-top: -10%;
-    background: #383a59;
+    background: var(--backgroundNavHome);
     box-shadow: 0 1px 6px rgba(142, 136, 192, 0.2);
-    border: 3px solid #6272a4;
+    border: 3px solid var(--backgroundBtnList);
     border-radius: 0.4em;
     font-size: 0.95em;
     text-align: left;
@@ -281,7 +363,7 @@ Home | Navigation
 }
 
 .nav-home .user span.logout_user>a+ul>li>a.active-logout {
-    color: #9492c0;
+    color: var(--backgroundMenuActive);
     transition: all 200ms ease-in;
 }
 
@@ -347,21 +429,21 @@ Home | Navigation
 
 .nav-home ul li a:hover,
 .nav-home ul li a:focus {
-    color: #9492c0;
+    color: var(--backgroundHoverMenu);
     transition: all 200ms ease-in;
 }
 
 .nav-home ul li a.active {
     padding: 4% 6.8%;
-    color: #9492c0;
+    color: var(--backgroundMenuActive);
     text-shadow: none;
-    border-left: 4px solid #6272a4;
+    border-left: 4px solid var(--backgroundBtnList);
     transition: all 200ms ease-in;
 }
 
 .nav-home ul li a:active,
 .nav-home ul li a.active:active {
-    color: #7875a1;
+    color: var(--backgroundMenuActive);
     transition: all 200ms ease-in;
 }
 
@@ -441,7 +523,7 @@ Menu Mobile
     justify-content: center;
     min-width: 52px;
     min-height: 52px;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-radius: 0.4em;
     color: #eef4ff;
@@ -452,7 +534,7 @@ Menu Mobile
 }
 
 .menu-mobile header .activator:hover {
-    background: #44475a;
+    background: var(--bacgroundContent);
     transition: color 200ms ease-in;
 }
 
@@ -475,7 +557,7 @@ Menu Mobile
     overflow-y: hidden;
     white-space: nowrap;
     height: 48px;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-radius: 0 0.4em 0.4em 0;
     padding: 5px 0 0 6px;
@@ -512,22 +594,22 @@ Menu Mobile
 .menu-mobile header nav ul li a:focus {
     background: #323844;
     box-shadow: 0 0 2px rgba(73, 80, 104, 0.4);
-    color: #9492c0;
+    color: var(--backgroundHoverMenu);
     transition: all 200ms ease-in;
 }
 
 .menu-mobile header nav ul li a:active,
-.menu-mobile header nav ul li a.active-menu:active {
+.menu-mobile header nav ul li a.activeMenu:active {
     background: #282d36;
     color: #7875a1;
     transition: all 200ms ease-in;
 }
 
-.menu-mobile header nav ul li a.active-menu {
+.menu-mobile header nav ul li a.activeMenu {
     background: #323844;
     box-shadow: 0 0 2px rgba(73, 80, 104, 0.4);
-    opacity: 0;
-    color: #9492c0;
+    opacity: 1;
+    color: var(--backgroundMenuActive);
     transform: translateX(-10px);
 }
 
@@ -567,9 +649,9 @@ User Mobile
 .user-mobile header .activator-user {
     width: 46px;
     height: 46px;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
-    border: 3px solid #44475a;
+    border: 3px solid var(--bacgroundContent);
     border-top-left-radius: 100%;
     border-bottom-left-radius: 100%;
     border-top-right-radius: 100%;
@@ -579,7 +661,7 @@ User Mobile
 }
 
 .user-mobile header .activator-user:hover {
-    background: #44475a;
+    background: var(--bacgroundContent);
     transition: background 200ms ease-in;
 }
 
@@ -593,7 +675,7 @@ User Mobile
     display: none;
     width: 0;
     height: 52px;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-top-left-radius: 10em;
     border-bottom-left-radius: 10em;
@@ -642,7 +724,7 @@ User Mobile
 .user-mobile nav ul li a:focus {
     background: #323844;
     box-shadow: 0 0 2px rgba(73, 80, 104, 0.4);
-    color: #9492c0;
+    color: var(--backgroundHoverMenu);
     transition: all 200ms ease-in;
 }
 
@@ -657,7 +739,7 @@ User Mobile
     background: #323844;
     box-shadow: 0 0 2px rgba(73, 80, 104, 0.4);
     opacity: 0;
-    color: #9492c0;
+    color: var(--backgroundHoverMenu);
     transform: translateX(10px);
 }
 
@@ -669,6 +751,72 @@ User Mobile
 
 @media only screen and (max-width: 535px) {
     .user-mobile{
-        float: revert;
+        /* float: revert; */
     }
 }
+
+
+
+.button-dark.dark-mobile{
+    left: 15px;
+    position: relative;
+    display: flex;
+    background-color: #21242d;
+    box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: pointer;
+    text-align: center;
+    top: 2px;
+}
+
+.button-dark svg {
+    width: 24px;
+    flex-shrink: 0;
+    fill: #ffce45;
+    stroke: #ffce45;
+    transition: 0.5s;
+}
+
+.button-dark {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    background-color: #21242d;
+    box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.dark-mode .button-dark{
+    background-color: #f7f7f7;
+}
+
+.dark-mode .button-dark  svg {
+    fill: transparent;
+    stroke:#3c3a3a;
+}
+
+.cont-copyright {
+    position: absolute;
+    bottom: 0;
+    left: 17px;
+    width: 100%;
+    text-align: center;
+}
+.cont-copyright hr{
+    width: 100%;
+    border:1px solid var(--borderColorHr);
+}
+.cont-copyright p{
+    padding: 4px 3px;
+    width:100%;
+    color:#fff;
+    font-size: 0.7em;
+}
+
+

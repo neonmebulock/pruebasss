@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head'); %>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/table.css">
+        <link rel="stylesheet" href="/css/form_add.css">
+        <link rel="stylesheet" href="/css/select2.css">
+        <link rel="stylesheet" href="/css/select2.min.css">
+    </head>
+
+<body>
+    <header class="header">
+        <div class="info-title">
+            <span class="title">
+                <%= span %>
+            </span>
+        </div>
+        <%- include ('./partials/header'); %>
+    </header>
+
+    <%- include ('./partials/navigation'); %>
+    <section class="content">
+        <div class="content-aside">
+            <div class="form-options">
+                <div class="options">
+                    <div> <button style="text-decoration: none; " class="btn btn-requerid icon btn-disabled"
+                            disabled>add</button>
+                    </div>
+                    <div><a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn"
+                            type="submit" requerid="">code</a>
+                    </div>
+                    <div>
+                        <a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn"
+                            type="submit" requerid="">print</a>
+                    </div>
+                    <a href="#" style="text-decoration: none;" class="btn btn-search-mobile icon">search</a>
+                    <div>
+                        <a href="/administrative" style="text-decoration: none;" class="btn btn-exit icon">close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-data">
+            <div class="head">
+                <h1 class="titulo">Agregar</h1>
+            </div>
+            <div class="body">
+                <form>
+                    <div class="wrap">
+                        <div class="first">
+                            <label class="label">Usuario</label>
+                            <input class="text" type="text" required="" disabled="">
+                            <label class="label">Nombres</label>
+                            <input class="text" type="text" required="" autofocus="">
+                            <label class="label">Apellidos</label>
+                            <input class="text" type="text" required="">
+                            <label class="label">Fecha de nacimiento</label>
+                            <input class="date" type="text" placeholder="aaaa-mm-dd" required="">
+                            <label class="label">Género</label>
+                            <select class="select selectactive"  required="" >
+                                <option value="">Seleccioné</option>
+                                <option value="mujer">Mujer</option>
+                                <option value="hombre">Hombre</option>
+                                <option value="otro">Otro</option>
+                                <option value="nodecirlo">Prefiero no decirlo</option>
+                            </select>
+                            <label class="label">Numero Identifiacion</label>
+                            <input class="text" type="number" placeholder="C.C" required="">
+                        </div>
+                        <div class="last">
+                            <label class="label">Número de teléfono</label>
+                            <input class="text" type="number" placeholder="9998887766"
+                                title="Ingresa un número de teléfono válido." maxlength="10" required="">
+                            <label class="label">Nivel de estudios</label>
+                            <select class="select selectactive" required="">
+                                <option value="">Seleccioné</option>
+                                <option value="Licenciatura">Licenciatura</option>
+                                <option value="Ingenieria">Ingenieria</option>
+                                <option value="Maestria">Maestria</option>
+                                <option value="Doctorado">Doctorado</option>
+                            </select>
+                            <label class="label">Cargo</label>
+                            <input class="text" type="text" placeholder="Cargo" maxlength="100" required="">
+                            <label class="label">Observación</label>
+                            <input class="text" type="text" name="txtobservation" placeholder="Observación"
+                                maxlength="200">
+                            <label class="label">Contraseña</label>
+                            <input class="text" type="text" name="txtrfc" placeholder="*******" required="">
+                        </div>
+                    </div>
+                    <button class="btn icon" type="submit">save</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <%- include ('./partials/flotinChat'); %>
+    <script>
+        $(document).ready(function() {
+    $('.selectactive').select2();
+});
+</script>
+    <script src="/js/select2.min.js"></script>
+    <script src="/js/menumobile.js"></script>
+    <script src="/js/gsap.min.js"></script>
+</body>
+</html>

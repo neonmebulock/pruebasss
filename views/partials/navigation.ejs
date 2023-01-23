@@ -8,77 +8,87 @@
             <a class="icon" href="#">expand_more</a>
             <ul>
                 <li>
-                    <a class="" style="border-bottom: 3px solid #6272a4;" href="/setting"><span
+                    <a class="" style="border-bottom: 3px solid var(--backgroundBtnList);" href="/setting"><span
                             class="icon">settings</span>Configuración</a>
                 </li>
                 <li>
-                    <a href=""><span class="icon">logout</span>Cerrar sesión</a>
+                    <a href="/"><span class="icon">logout</span>Cerrar sesión</a>
                 </li>
             </ul>
         </span>
     </div>
     <ul>
-        <li><a class="active" href="/"><span class="icon">dashboard</span>Inicio</a>
+        <li>
+            <a class="<%= active == 'inicio' ? 'active' : '' %>" href="/"><span class="icon">dashboard</span>Inicio</a>
         </li>
-        <li><a class="" href="/periods"><span class="icon">date_range</span>Periodo Escolar</a>
+        <li>
+            <a class="<%= active == 'periods' ? 'active' : '' %>" href="/periods"><span class="icon">date_range</span>Periodo Escolar</a>
         </li>
-        <li><a class="" href="/users"><span class="icon">manage_accounts</span>Usuarios</a>
+        <li>
+            <a class="<%= active == 'users' ? 'active' : '' %>" href="/users"><span class="icon">manage_accounts</span>Usuarios</a>
         </li>
-        <li><a class="" href="/administrative"><span
-                    class="icon">supervised_user_circle</span>Administrativos</a>
+        <li>
+            <a class="<%= active == 'administrative' ? 'active' : '' %>" href="/administrative"><span class="icon">supervised_user_circle</span>Administrativos</a>
         </li>
-        <li><a class="" href="/teachers"><span class="icon">connect_without_contact</span>Docentes</a>
+        <li>
+            <a class="<%= active == 'teachers' ? 'active' : '' %>" href="/teachers"><span class="icon">connect_without_contact</span>Docentes</a>
         </li>
-        <li><a class="" href="/students"><span class="icon">recent_actors</span>Alumnos</a>
+        <li>
+            <a class="<%= active == 'students' ? 'active' : '' %>" href="/students"><span class="icon">recent_actors</span>Alumnos</a>
         </li>
-        <li><a class="" href="/subjects"><span class="icon">library_books</span>Asignaturas</a>
+        <li>
+            <a class="<%= active == 'subjects' ? 'active' : '' %>" href="/subjects"><span class="icon">library_books</span>Asignaturas</a>
         </li>
-        <li><a class="" href=""><span class="icon">groups</span>Grupos</a>
+        <li>
+            <a class="" href=""><span class="icon">groups</span>Grupos</a>
         </li>
-        <li><a class="" href=""><span class="icon">fact_check</span>Asistencias</a>
+        <li>
+            <a class="" href=""><span class="icon">fact_check</span>Asistencias</a>
+        </li>
+        <li>
+            <a  class="<%= active == 'chat' ? 'active' : '' %>" href="/chat"><span class="icon">message</span>Chat</a>
         </li>
     </ul>
+    <div class="button-dark dark-mode-btn" id="dark-mode-btn">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+    </div>
+    <div class="cont-copyright">
+        <hr>
+        <p>© Copyright Keku Enterprise</p>
+    </div>
 </div>
 <div class="menu-mobile">
     <header>
         <span class="activator icon" id="activator">menu</span>
         <nav>
             <ul>
-                <li>
-                    <a class="active-menu" href="/"><span class="icon">dashboard</span><span
-                            class="text">Inicio</span></a>
+                <li class="lista">
+                    <a class="<%= active == 'inicio' ? 'activeMenu' : '' %>" href="/"><span class="icon">dashboard</span><span class="text">Inicio</span></a>
+                </li>
+                <li class="lista">
+                    <a class="<%= active == 'periods' ? 'activeMenu' : '' %>" href="/periods"><span class="icon">date_range</span><span class="text">Perido Escolar</span></a>
+                </li>
+                <li  class="lista">
+                    <a class="<%= active == 'users' ? 'activeMenu' : '' %>" href="/users"><span class="icon">manage_accounts</span><span class="text">Usuarios</span></a>
+                </li>
+                <li  class="lista">
+                    <a class="<%= active == 'administrative' ? 'activeMenu' : '' %>" href="/administrative"><span class="icon">supervised_user_circle</span><span class="text">Administrativos</span></a>
+                </li>
+                <li  class="lista">
+                    <a class="<%= active == 'teachers' ? 'activeMenu' : '' %>" href="/teachers"><span class="icon">connect_without_contact</span><span class="text">Docentes</span></a>
+                </li>
+                <li  class="lista">
+                    <a class="<%= active == 'students' ? 'activeMenu' : '' %>" href="/students"><span class="icon">recent_actors</span><span class="text">Alumnos</span></a>
                 </li>
                 <li>
-                    <a class="/periods" href=""><span class="icon">date_range</span><span
-                            class="text">Perido Escolar</span></a>
+                    <a class="<%= active == 'subjects' ? 'activeMenu' : '' %>" href="/subjects"><span class="icon">library_books</span><span class="text">Asignaturas</span></a>
                 </li>
-                <li>
-                    <a class="" href="/users"><span class="icon">manage_accounts</span><span
-                            class="text">Usuarios</span></a>
-                </li>
-                <li>
-                    <a class="" href="/administrative"><span
-                            class="icon">supervised_user_circle</span><span
-                            class="text">Administrativos</span></a>
-                </li>
-                <li>
-                    <a class="" href="/teachers"><span class="icon">connect_without_contact</span><span
-                            class="text">Docentes</span></a>
-                </li>
-                <li>
-                    <a class="" href="/students"><span class="icon">recent_actors</span><span
-                            class="text">Alumnos</span></a>
-                </li>
-                <li>
-                    <a class="" href="/subjects"><span class="icon">library_books</span><span
-                            class="text">Asignaturas</span></a>
-                </li>
-                <li>
+                <li  class="lista">
                     <a class="" href="#"><span class="icon">groups</span><span class="text">Grupos</span></a>
                 </li>
-                <li>
-                    <a class="" href="#"><span class="icon">fact_check</span><span
-                            class="text">Asistencias</span></a>
+                <li class="lista">
+                    <a class="" href="#"><span class="icon">fact_check</span><span class="text">Asistencias</span></a>
                 </li>
             </ul>
         </nav>
@@ -90,12 +100,18 @@
         <img class="activator-user" id="activator-user" src="./img/user.png">
         <nav>
             <ul>
+                <li>
+                    <div class="button-dark dark-mode-btn dark-mobile" id="dark-mode-btn">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+                    </div>
+                </li>
                 <li class="first-item">
                     <a href="/setting"><span class="icon">settings</span><span
                             class="text">Configuración</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="icon">logout</span><span class="text">Cerrar
+                    <a href="/login"><span class="icon">logout</span><span class="text">Cerrar
                             sesión</span></a>
                 </li>
             </ul>

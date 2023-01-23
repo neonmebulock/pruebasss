@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include ('./partials/head'); %>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/table.css">
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/table.css">
 </head>
+
 <body>
 
     <header class="header">
         <div class="info-title">
-            <span class="title"><%= span %></span>
+            <span class="title">
+                <%= span %>
+            </span>
         </div>
         <%- include ('./partials/header'); %>
     </header>
     <%- include ('./partials/navigation'); %>
 
-    <%- include ('./partials/tableDefault'); %>
+        <%- include ('./partials/tableDefault'); %>
 
-    <div class="divOptions"></div>
 
-    <script src="/js/options.js"></script>
-    <script src="/js/menumobile.js"></script>
-    <script src="/js/gsap.min.js"></script>
+            <div class="form-gridview">
+                <table class="default">
+                    <%- include ('./partials/table_admin'); %>
+                </table>
+                <div class="pages">
+                    <ul>
+                        <li class="active">
+                            <div>
+                                <button type="submit" name="page" value="1">1</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="divOptions"></div> -->
+            <%- include ('./partials/flotinChat'); %>
+                <!-- <script src="/js/options.js"></script> -->
+                <script src="/js/menumobile.js"></script>
+                <script src="/js/gsap.min.js"></script>
 </body>
+
 </html>

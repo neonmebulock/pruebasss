@@ -39,6 +39,7 @@
 
 @media only screen and (max-width: 1186px) {
     .content {
+    flex-direction: column !important;
     display: flex;
     align-items: center;
     flex-flow: column-reverse;
@@ -64,7 +65,7 @@
 
 .form-options {
     width: 100%;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-radius: 0.4em;
     user-select: none;
@@ -74,7 +75,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    border-bottom: 1px solid #282a3660;
+    border-bottom: 1px solid var(--borderColorHr);
     padding: 5% 10%;
 }
 
@@ -95,7 +96,7 @@
 
 .form-options .options .btn.btn-disabled,
 .form-options .search .btn-search.btn-disabled {
-    background: #6a7186;
+    background: var(--backgroundBtnDisabled);
     color: #eef4ff98;
     cursor: initial;
     pointer-events: none;
@@ -206,7 +207,7 @@
 }
 
 .form-options .search .text-search:focus {
-    box-shadow: 0 0 0 2.5pt #929cb9 !important;
+    box-shadow: 0 0 0 2.5pt var(--backgroundBtnFocusShearch) !important;
     color: #4a567c !important;
     transition: all 200ms ease-in;
 }
@@ -216,7 +217,7 @@
     width: 20%;
     height: 36px;
     margin: 0 6.5% 0 -20%;
-    background: #6272a4;
+    background: var(--backgroundBtnShearch);
     border: none;
     color: #eef4ff;
     cursor: initial;
@@ -231,14 +232,14 @@
 
 .form-options .search .btn-search:hover,
 .form-options .search .btn-search:focus {
-    background: #4a567c;
-    box-shadow: inset 0 0 0 2.5pt #929cb9 !important;
+    background: var(--colorhr);
+    box-shadow: inset 0 0 0 2.5pt var(--backgroundFocusInput) !important;
     color: #eef4ff98;
     transition: all 200ms ease-in;
 }
 
 .form-options .search .btn-search:hover:active {
-    background: #6272a4;
+    background: var(--backgroundBtnShearch);
     transition: all 200ms ease-in;
 }
 /*-------------------------------------------
@@ -249,13 +250,14 @@
     float: left;
     margin: 0 0 35px 0;
     width: 71%;
-    background: #44475a;
+    background: var(--bacgroundContent);
     box-shadow: 0 2px 2px rgba(73, 80, 104, 0.4);
     border-radius: 0.4em;
 }
 
 .form-gridview img.data-not-found,
 .form-data img.data-not-found {
+    overflow-x: hidden;
     display: block;
     width: 80%;
     margin: 2% auto 5%;
@@ -458,3 +460,62 @@
     cursor: pointer;
     transition: all 200ms ease-in;
 }
+
+/*-------------------------------------------
+  Formulario | Edit USers
+-------------------------------------------*/
+.form-users .body .section-user-image, .form-config-user .body .section-user-image {
+    width: 100%;
+}
+.form-users .body .section-user-info {
+    display: block;
+    width: 100%;
+    margin: 13px 0 10px;
+}
+.form-users .body .section-user-image img, .form-config-user .body .section-user-image img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    background-color: #eef4ff;
+    border: solid #eef4ff 4px;
+    border-radius: 100%;
+    pointer-events: none;
+    box-shadow: 0 0 6px rgba(142, 136, 192, 0.2);
+}
+.form-users .body .section-user-image .file, .form-config-user .body .section-user-image .file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto;
+    margin-top: -32px;
+    padding: 0;
+    background: #6272a4;
+    box-shadow: 0 0 6px rgba(142, 136, 192, 0.2);
+    border-radius: 100%;
+    color: #eef4ff;
+    text-decoration: none;
+    font-size: 1.6em;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+.form-users .body .section-user-info span.user-id, .form-users .body .section-user-info span.user-name {
+    display: block;
+    color: #eef4ff;
+    text-shadow: 0 1px 5px rgba(142, 136, 192, 0.2);
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+}
+.form-users .body .section-user-info span.user-id {
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field{
+    display: none !important;
+}
+

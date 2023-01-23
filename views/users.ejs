@@ -3,6 +3,7 @@
 <head>
     <%- include ('./partials/head'); %>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/table.css" >
 </head>
 <body>
 
@@ -14,6 +15,32 @@
     </header>
 
     <%- include ('./partials/navigation'); %>
+
+
+    <%- include ('./partials/tableDefault'); %>
+    <div class="form-gridview">
+        <table class="default">
+            <%- include ('./partials/table_users'); %>
+        </table>
+
+        <div class="pages">
+            <ul>
+                <li class="active">
+                    <div>
+                        <button type="submit" name="page" value="1">1</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <%- include ('./partials/flotinChat'); %>
+<script>
+var btnAddDisabled = document.querySelector(".activateOptionPeriods");
+btnAddDisabled.classList.add("btn-disabled");
+
+</script>
 
     <script src="/js/menumobile.js"></script>
     <script src="/js/gsap.min.js"></script>

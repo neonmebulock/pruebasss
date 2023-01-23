@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head'); %>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/table.css">
+        <link rel="stylesheet" href="/css/select2.css">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="info-title">
+            <span class="title">
+                <%= span %>
+            </span>
+        </div>
+        <%- include ('./partials/header'); %>
+    </header>
+
+    <%- include ('./partials/navigation'); %>
+        <section class="content">
+            <div class="content-aside">
+                <div class="form-options">
+                    <div class="options">
+                        <div> <button style="text-decoration: none; " class="btn btn-requerid icon btn-disabled"
+                                disabled="">add</button>
+                        </div>
+                        <div><a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn"
+                                type="submit" requerid="">code</a>
+                        </div>
+                        <div>
+                            <a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn"
+                                type="submit" requerid="">print</a>
+                        </div>
+                        <a href="#" style="text-decoration: none;" class="btn btn-search-mobile icon">search</a>
+                        <div>
+                            <a href="/users" style="text-decoration: none;" class="btn btn-exit icon">close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-data form-users">
+                <div class="loader-user">
+                </div>
+                <div class="body">
+                    <div class="section-croppie-image" style="display: none;">
+                        <div class="image-crop croppie-container">
+                            <div class="cr-boundary" aria-dropeffect="none" style="width: 224px; height: 224px;"><img
+                                    class="cr-image" alt="preview" aria-grabbed="false">
+                                <div class="cr-viewport cr-vp-circle" tabindex="0" style="width: 190px; height: 190px;">
+                                </div>
+                                <div class="cr-overlay"></div>
+                            </div>
+                            <div class="cr-slider-wrap"><input class="cr-slider" type="range" step="0.0001"
+                                    aria-label="zoom"></div>
+                        </div>
+                        <div class="options">
+                            <a href="#" class="change-btn"><span class="icon">sync</span></a>
+                            <a href="#" class="crop-btn"><span class="icon">crop</span></a>
+                            <a href="#" class="cancel-btn"><span class="icon">close</span></a>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="wrap">
+                            <div class="section-user-image">
+                                <img src="../img/user.png">
+                                <a href="#" class="file"><span class="icon">add_a_photo</span></a>
+                                <input id="fileuploadimage" style="display: none;" type="file" name="fileuploadimage"
+                                    accept=".jpg, .jpeg, .png">
+                            </div>
+                            <div class="section-user-info">
+                                <span class="user-name">Nombre Admin</span>
+                                <span class="user-id">admin</span>
+                            </div>
+                            <div class="first">
+                                <label for="txtuseremail" class="label">Email</label>
+                                <input id="txtuseremail" class="text" type="email" name="txtemailupdate"
+                                    placeholder="example@email.com" maxlength="200" autofocus="">
+                            </div>
+                            <div class="last">
+                                <label for="selectusertype" class="label">Permisos</label>
+                                    <select  class="select select2-hidden-accessible selectactive"
+                                        name="txtusertype" required="" data-select2-id="select2-data-selectusertype"
+                                        tabindex="-1" aria-hidden="true">
+                                        <option value="admin" data-select2-id="select2-data-2-t3ci">Administrador</option>
+                                        <option value="student">Alumno</option>
+                                        <option value="teacher">Docente</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <button id="btnSave" class="btn icon" type="submit">save</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            $(document).ready(function () {
+                $('.selectactive').select2();
+            });
+        </script>
+        <script src="/js/menumobile.js"></script>
+        <script src="/js/gsap.min.js"></script>
+        <%- include ('./partials/flotinChat'); %>
+</body>
+</html>
