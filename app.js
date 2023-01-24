@@ -14,12 +14,11 @@ const mongoose = require('mongoose');
 const router = require('./routes/index');
 app.use('/', router);
 
-const uri = `mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority`;
 
 require('./views/js/socket') (io);
 
 //conexion base de datos
-mongoose.connect('mongodb://localhost/keku-school')
+mongoose.connect('mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
 .then(db => console.log('server connected'))
 .catch(err => console.error(err));
 
