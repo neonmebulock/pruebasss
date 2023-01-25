@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 const router = require('./src/routes/index');
 app.use('/', router);
 
-const uri = `mongodb+srv://${process.env.USER1}:${process.env.PASSWORD1}@data1.kwmka1q.mongodb.net/${process.env.DBNAME1}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER1}:${process.env.PASSWORD1}@cluster0.uj02c5w.mongodb.net/${process.env.DBNAME1}?retryWrites=true&w=majority`;
 require('./src/views/js/socket') (io);
 
 //conexion base de datos
