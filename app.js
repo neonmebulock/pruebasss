@@ -11,14 +11,14 @@ const mongoose = require('mongoose');
 
 
 
-const router = require('./routes/index');
+const router = require('./src/routes/index');
 app.use('/', router);
 
-
-require('./views/js/socket') (io);
+const uri = `mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority`;
+require('./src/views/js/socket') (io);
 
 //conexion base de datos
-mongoose.connect('mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true})
 .then(db => console.log('server connected'))
 .catch(err => console.error(err));
 
@@ -26,16 +26,16 @@ mongoose.connect('mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.n
 //Puerto
 app.set('port', process.env.PORT || 3000);
 //rutas
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/src/views'));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, '/src/views')));
 
 
-app.use('/', require('./routes/index'));
+app.use('/', require('./src/routes/index'));
 
 server.listen(app.get('port'), () => {
     console.log(`servidor en puerto`, app.get('port'));
