@@ -14,7 +14,7 @@ const mongoose = require('mongoose');
 const router = require('./src/routes/index');
 app.use('/', router);
 
-const uri = `mongodb+srv://keku:ontkugAVJutZsKG7@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.keku}:${process.env.ontkugAVJutZsKG7}@cluster0.uj02c5w.mongodb.net/${process.env.kekuSchoolDB}?retryWrites=true&w=majority`;
 require('./src/views/js/socket') (io);
 
 //conexion base de datos
