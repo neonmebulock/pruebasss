@@ -14,12 +14,11 @@ const mongoose = require('mongoose');
 const router = require('./src/routes/index');
 app.use('/', router);
 
-const uri = `mongodb+srv://${process.env.USER1}:${process.env.PASSWORD1}@cluster0.uj02c5w.mongodb.net/${process.env.DBNAME1}?retryWrites=true&w=majority`;
 require('./src/views/js/socket') (io);
 
 //conexion base de datos
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true})
-.then(db => console.log('server connected'))
+mongoose.connect('mongodb+srv://keku:ginacv10@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
+.then(db => console.log('db connected'))
 .catch(err => console.error(err));
 
 
