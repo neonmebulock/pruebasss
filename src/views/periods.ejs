@@ -38,83 +38,32 @@
     </div>
 
 
+<form id="product-form" action="/new-perids" method="POST" >
+    <input type="text" placeholder="periodo escolar" name="primerNombre" id="peridoEscolar"/>
+    <input type="text" placeholder="Nombre" name="segundoCampo" id="nombrePeriodo"/>
+    <input type="text" placeholder="estado" name="tercerCampo" id="estadoPeriodo"/>
+    <input type="text" placeholder="actual" name="cuartoCampo" id="actualPeriodo"/>
+    <button>Enviar</button>
+</form>
 
+<script>
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const periodoEscolar = document.getElementById('peridoEscolar').value;
+    const nombrePeriodo = document.getElementById('nombrePeriodo').value;
+    const estadoPeriodo = document.getElementById('estadoPeriodo').value;
+    const actualPeriodo = document.getElementById('actualPeriodo').value;
 
-
-
-
-<!-- <script type="text/javascript">
-        let activateOptionPeriods = document.querySelector(".activateOptionPeriods");
-let divPerids = document.querySelector(".content");
-let contentAsideP = document.querySelector(".content-aside");
-
-activateOptionPeriods.addEventListener("click", add_Periods);
-function add_Periods(){
-    divPerids.classList.add("active");
-    contentAsideP.style.display = 'none';
-
-
-divPerids.innerHTML = `
-<div class="content-aside">
-<div class="form-options">
-    <div class="options">
-        <div> <button style="text-decoration: none; " class="btn btn-requerid icon btn-disabled"
-                disabled>add</button>
-        </div>
-        <div><a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn" type="submit"
-                requerid="">code</a>
-        </div>
-        <div>
-            <a href="#" style="text-decoration: none;" class="btn btn-requerid icon" name="btn" type="submit"
-                requerid="">print</a>
-        </div>
-        <a href="#" style="text-decoration: none;" class="btn btn-search-mobile icon">search</a>
-        <div>
-            <a href="/periods" style="text-decoration: none;" class="btn btn-exit icon">close</a>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<div class="form-data">
-        <div class="head">
-            <h1 class="titulo">Agregar Periodo Escolar</h1>
-        </div>
-        <div class="body">
-            <form>
-                <div class="wrap">
-                    <div class="first">
-                        <label for="txtspid" class="label">Periodo escolar</label>
-                        <input id="txtspid" class="text" type="text" name="txtspid" value="" placeholder="ID Periodo Escolar" maxlength="20" onkeyup="this.value = this.value.toUpperCase()" required="" autofocus="">
-                        <label for="txtspname" class="label">Nombre</label>
-                        <input id="txtspname" class="text" type="text" name="txtspname" value="" placeholder="Nombre" maxlength="100" required="">
-                        <label for="datespstart" class="label">Inicia</label>
-                        <input id="datespstart" class="date" type="text" name="datespstart" value="" pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-dd" maxlength="10" required="">
-                    </div>
-                    <div class="last">
-                        <label for="datespend" class="label">Termina</label>
-                        <input id="datespend" class="date" type="text" name="datespend" value="" pattern="\d{4}-\d{2}-\d{2}" placeholder="aaaa-mm-dd" maxlength="10" required="">
-                        <label for="selectactive" class="label">Activo</label>
-                        <select id="selectactive" class="select" name="selectactive" required="">
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                        </select>
-                        <label for="selectcurrent" class="label">Actual</label>
-                        <select id="selectcurrent" class="select" name="selectcurrent" required="">
-                            <option value="0">No</option>
-                            <option value="1">Si</option>
-                        </select>
-                    </div>
-                </div>
-                <button class="btn icon" type="submit">save</button>
-            </form>
-        </div>
-</div>
-`
-}
-    </script> -->
-
+    // Enviar la información a Firebase mediante Fetch
+    fetch('https://your-firebase-app.firebaseio.com/products.json', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ periodoEscolar, nombrePeriodo, estadoPeriodo, actualPeriodo })
+})
+});
+</script>
 
     <!-- <script src="/js/options.js"></script> -->
     <%- include ('./partials/flotinChat'); %>

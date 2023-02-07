@@ -4,8 +4,6 @@ const getDestination = require('./routesHrf').getDestination;
 const getDestinationExit = require('./routesHrf').getDestinationExit;
 
 
-
-
 // Login Inciar Session
 router.get('/login', (req, res) => {
 res.render('login', {
