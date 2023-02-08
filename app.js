@@ -11,12 +11,12 @@ const mongoose = require('mongoose');
 
 
 
-const router = require('./routes/index');
+const router = require('./src/routes/index');
 app.use('/', router);
 
 
 
-require('./views/js/socket') (io);
+require('./src/views/js/socket') (io);
 
 //conexion base de datos
 mongoose.connect('mongodb://localhost/keku-school')
@@ -27,16 +27,16 @@ mongoose.connect('mongodb://localhost/keku-school')
 //Puerto
 app.set('port', process.env.PORT || 3000);
 //rutas
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, './src/views')));
 
 
-app.use('/', require('./routes/index'));
+app.use('/', require('./src/routes/index'));
 
 server.listen(app.get('port'), () => {
     console.log(`servidor en puerto`, app.get('port'));
@@ -50,6 +50,8 @@ server.listen(app.get('port'), () => {
 //     res.status(404);
 //     res.render('404');
 // });
+
+
 app.use((req, res, next) => {
     res.status(404).render('404', {
         title: '404 Error',
