@@ -11,31 +11,32 @@ const mongoose = require('mongoose');
 
 
 
-
-const router = require('./src/routes/index');
+const router = require('./routes/index');
 app.use('/', router);
 
-require('./src/views/js/socket') (io);
+
+
+require('./views/js/socket') (io);
 
 //conexion base de datos
-mongoose.connect('mongodb+srv://keku:ginacv10@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
-.then(db => console.log('db connected'))
+mongoose.connect('mongodb://localhost/keku-school')
+.then(db => console.log('server connected'))
 .catch(err => console.error(err));
 
 
 //Puerto
 app.set('port', process.env.PORT || 3000);
 //rutas
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/src/views'));
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-app.use(express.static(path.join(__dirname, '/src/views')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 
-app.use('/', require('./src/routes/index'));
+app.use('/', require('./routes/index'));
 
 server.listen(app.get('port'), () => {
     console.log(`servidor en puerto`, app.get('port'));
@@ -62,3 +63,9 @@ app.use((err, req, res, next) => {
         message: 'Ocurrió un error en el servidor.'
     });
 });
+
+
+
+
+
+
