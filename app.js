@@ -17,7 +17,7 @@ app.use('/', router);
 
 
 require('./src/views/js/socket') (io);
-
+mongoose.set('strictQuery', false);
 //conexion base de datos
 mongoose.connect('mongodb+srv://keku:ooqKdYaQb1zIiVDH@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
 .then(db => console.log('server connected'))
