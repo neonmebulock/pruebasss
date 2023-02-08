@@ -19,7 +19,7 @@ app.use('/', router);
 require('./src/views/js/socket') (io);
 
 //conexion base de datos
-mongoose.connect('mongodb://localhost/keku-school')
+mongoose.connect('mongodb+srv://keku:ooqKdYaQb1zIiVDH@cluster0.uj02c5w.mongodb.net/?retryWrites=true&w=majority')
 .then(db => console.log('server connected'))
 .catch(err => console.error(err));
 
